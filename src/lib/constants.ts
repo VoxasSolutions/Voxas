@@ -5,12 +5,12 @@ export const SITE_CONFIG = {
     "Voxas is a detail-obsessed design and engineering studio. We build lightning-fast web platforms and conversion engines that transform traffic into revenue.",
   url: "https://voxas.app",
   email: "hello@voxas.app",
-  phone: "+91 98765 43210",
-  whatsappNumber: "919876543210",
+  phone: "+91 70394 90720",
+  whatsappNumber: "917039490720",
   whatsappMessage:
     "Hi Voxas! I'm interested in getting a website for my business. Can we discuss?",
-  location: "Mumbai, India",
-  founded: "2024",
+  location: "Navi Mumbai, Maharashtra, India",
+  founded: "2026",
 } as const;
 
 export const NAV_LINKS = [

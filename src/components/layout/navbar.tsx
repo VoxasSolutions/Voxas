@@ -24,9 +24,21 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-xl font-bold tracking-tighter text-on-surface"
+          className="flex items-center gap-2.5 group"
         >
-          {SITE_CONFIG.name}
+          <img
+            src="/file_00000000bbec720684b54a85089de096(1).png"
+            alt="Voxas Icon"
+            className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+          <img
+            src="/file_0000000083307207af57182ffcddf1c6(1).png"
+            alt="Voxas Icon"
+            className="h-5 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+          {/* <span className="text-xl font-bold tracking-widest bg-gradient-to-r from-[#e2c69f] to-[#c084fc] bg-clip-text text-transparent font-display">
+            VOXAS
+          </span> */}
         </Link>
 
         {/* Desktop Links */}
@@ -36,7 +48,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm transition-colors duration-200",
+                "font-display text-[11px] uppercase tracking-wider transition-colors duration-200",
                 pathname === link.href
                   ? "text-on-surface"
                   : "text-on-surface-variant hover:text-on-surface"
@@ -51,7 +63,7 @@ export function Navbar() {
         <div className="hidden items-center gap-4 md:flex">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-lg bg-primary-container px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110"
+            className="inline-flex items-center rounded-lg bg-primary-container px-5 py-2.5 font-display text-[10px] uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110"
             style={{
               boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2)",
             }}
@@ -89,7 +101,7 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "rounded-lg px-4 py-3 text-sm transition-colors",
+                    "rounded-lg px-4 py-3 font-display text-xs uppercase tracking-wider transition-colors",
                     pathname === link.href
                       ? "bg-white/5 text-on-surface"
                       : "text-on-surface-variant hover:bg-white/5 hover:text-on-surface"
@@ -101,7 +113,7 @@ export function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 rounded-lg bg-primary-container px-4 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white transition-all hover:brightness-110"
+                className="mt-2 rounded-lg bg-primary-container px-4 py-3 text-center font-display text-[10px] uppercase tracking-widest text-white transition-all hover:brightness-110"
               >
                 Get Started
               </Link>

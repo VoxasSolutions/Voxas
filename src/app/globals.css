@@ -3,29 +3,29 @@
 /* ─── Design Tokens ─── */
 :root {
   /* Surfaces */
-  --surface: #15121b;
-  --surface-dim: #15121b;
-  --surface-bright: #3c3742;
-  --surface-container-lowest: #100d16;
-  --surface-container-low: #1d1a24;
-  --surface-container: #221e28;
-  --surface-container-high: #2c2833;
-  --surface-container-highest: #37333e;
+  --surface: #131017;
+  --surface-dim: #131017;
+  --surface-bright: #2b2632;
+  --surface-container-lowest: #0b090e;
+  --surface-container-low: #18151e;
+  --surface-container: #1d1924;
+  --surface-container-high: #24202d;
+  --surface-container-highest: #2c2837;
 
   /* Text */
-  --on-surface: #e8dfee;
-  --on-surface-variant: #ccc3d8;
+  --on-surface: #f4f2f6;
+  --on-surface-variant: #cbbccf;
 
   /* Primary */
-  --primary: #d2bbff;
+  --primary: #e2c69f;
   --primary-container: #7c3aed;
-  --on-primary: #3f008e;
-  --on-primary-container: #ede0ff;
+  --on-primary: #382500;
+  --on-primary-container: #ffeed3;
 
   /* Secondary */
-  --secondary: #4cd7f6;
-  --secondary-container: #03b5d3;
-  --on-secondary: #003640;
+  --secondary: #c084fc;
+  --secondary-container: #8b5cf6;
+  --on-secondary: #2e0059;
 
   /* Tertiary */
   --tertiary: #ffb784;
@@ -39,13 +39,13 @@
   --outline-variant: #4a4455;
 
   /* Misc */
-  --background: #09090b;
-  --foreground: #e8dfee;
-  --card: #111827;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.14);
-  --accent: #7c3aed;
-  --accent-secondary: #06b6d4;
+  --background: #0b090e;
+  --foreground: #f4f2f6;
+  --card: #131017;
+  --border: rgba(226, 198, 159, 0.08);
+  --border-hover: rgba(226, 198, 159, 0.18);
+  --accent: #e2c69f;
+  --accent-secondary: #c084fc;
 
   /* Radius */
   --radius-sm: 4px;
@@ -84,8 +84,8 @@
   --color-accent: var(--accent);
   --color-accent-secondary: var(--accent-secondary);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-azonix);
 }
 
 /* ─── Base Styles ─── */
@@ -100,6 +100,12 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), var(--font-sans), system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase;
 }
 
 /* ─── Focus Styles ─── */
@@ -173,7 +179,7 @@ body {
     135deg,
     rgba(255, 255, 255, 0.1),
     rgba(255, 255, 255, 0.02) 50%,
-    rgba(124, 58, 237, 0.1)
+    rgba(226, 198, 159, 0.08)
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -185,10 +191,10 @@ body {
 
 .bento-card:hover {
   transform: translateY(-4px);
-  background: rgba(17, 24, 39, 0.65);
-  border-color: rgba(124, 58, 237, 0.25);
+  background: rgba(19, 16, 23, 0.65);
+  border-color: rgba(226, 198, 159, 0.25);
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 
-              0 0 20px -5px rgba(124, 58, 237, 0.15);
+              0 0 20px -5px rgba(226, 198, 159, 0.12);
 }
 
 .bento-card:hover::before {
@@ -196,8 +202,8 @@ body {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.15),
-    rgba(124, 58, 237, 0.25) 50%,
-    rgba(76, 215, 246, 0.2)
+    rgba(226, 198, 159, 0.25) 50%,
+    rgba(192, 132, 252, 0.2)
   );
 }
 

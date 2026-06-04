@@ -94,7 +94,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="flex flex-col justify-center md:col-span-2 md:border-l md:border-white/[0.05] md:pl-8">
                     <div className="mb-4 text-xs font-semibold uppercase tracking-widest text-secondary">
-                      Engineering Stack
+                      Performance Standards
                     </div>
                     <ul className="flex flex-col gap-2.5">
                       {dev.features.map((feature) => (
@@ -106,9 +106,16 @@ export default function ServicesPage() {
                     </ul>
                   </div>
                 </div>
-                <div className="mt-8 rounded-lg bg-white/[0.02] border border-white/[0.04] p-4 font-mono text-xs text-on-surface-variant/80 flex items-center justify-between">
-                  <span>$ npx create-next-app@latest --typescript</span>
-                  <span className="text-secondary">v15.0</span>
+                <div className="mt-8 rounded-lg bg-white/[0.02] border border-white/[0.04] p-4 text-xs text-on-surface-variant/80 flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="font-semibold text-white">Lighthouse Score:</span>
+                    <span>99% Performance Average</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="text-primary font-semibold">100% SEO Ready</span>
+                    <span className="text-secondary font-semibold">Under 1.5s Load Time</span>
+                  </div>
                 </div>
               </div>
             </StaggerItem>
@@ -184,9 +191,9 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="flex-1 glass-panel rounded-2xl p-8" style={{ background: "rgba(17,24,39,0.3)" }}>
+                <div className="flex-1 glass-panel rounded-2xl p-8" style={{ background: "rgba(19, 16, 23, 0.4)" }}>
                   <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-4">
-                    <span className="text-xs font-mono text-on-surface-variant/80">Search Query Index</span>
+                    <span className="text-xs font-semibold uppercase tracking-widest text-primary">Google Ranking Status</span>
                     <span className="rounded bg-green-500/10 px-2 py-0.5 text-[10px] font-semibold text-green-400">Live Status</span>
                   </div>
                   <div className="flex flex-col gap-3">
@@ -227,7 +234,7 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="flex-1 glass-panel rounded-2xl p-8" style={{ background: "rgba(17,24,39,0.3)" }}>
+                <div className="flex-1 glass-panel rounded-2xl p-8" style={{ background: "rgba(19, 16, 23, 0.4)" }}>
                   <div className="rounded-lg border border-white/5 bg-white/[0.02] p-5">
                     <div className="flex items-start justify-between">
                       <div>
@@ -242,7 +249,7 @@ export default function ServicesPage() {
                       <span className="text-sm font-bold text-white">5.0</span>
                       <div className="flex gap-0.5">
                         {[1, 2, 3, 4, 5].map((s) => (
-                          <Star key={s} size={12} fill="#4cd7f6" className="text-secondary" />
+                          <Star key={s} size={12} fill="#e2c69f" className="text-primary" />
                         ))}
                       </div>
                       <span className="text-[10px] text-on-surface-variant/80 ml-1">(120+ reviews)</span>
@@ -277,19 +284,19 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="flex-1 glass-panel rounded-2xl p-8" style={{ background: "rgba(17,24,39,0.3)" }}>
+                <div className="flex-1 glass-panel rounded-2xl p-8" style={{ background: "rgba(19, 16, 23, 0.4)" }}>
                   <div className="flex flex-col gap-4">
-                    <span className="text-[10px] font-mono text-on-surface-variant/80">Brand Design Tokens</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">Brand Identity Asset Preview</span>
                     <div className="flex items-center gap-4">
-                      <div className="h-10 w-10 rounded-full border border-white/10" style={{ background: "#15121b" }} />
-                      <div className="h-10 w-10 rounded-full border border-white/10" style={{ background: "#7c3aed" }} />
-                      <div className="h-10 w-10 rounded-full border border-white/10" style={{ background: "#4cd7f6" }} />
+                      <div className="h-10 w-10 rounded-full border border-white/10" style={{ background: "#0b090e" }} />
+                      <div className="h-10 w-10 rounded-full border border-white/10" style={{ background: "#e2c69f" }} />
+                      <div className="h-10 w-10 rounded-full border border-white/10" style={{ background: "#c084fc" }} />
                       <div className="h-10 w-10 rounded-full border border-white/10" style={{ background: "#ffb784" }} />
                     </div>
-                    <div className="mt-2 text-[10px] font-mono text-on-surface-variant/80">Typography Scale</div>
-                    <div className="flex flex-col gap-1.5 font-sans">
-                      <div className="text-lg font-bold text-white tracking-tight">Display Bold (Geist)</div>
-                      <div className="text-sm font-medium text-white/80">Body Medium 14px</div>
+                    <div className="mt-2 text-[10px] font-semibold uppercase tracking-widest text-primary">Brand Typography</div>
+                    <div className="flex flex-col gap-1.5">
+                      <div className="text-lg font-extrabold text-white tracking-tighter">Geometric Sans (Plus Jakarta)</div>
+                      <div className="text-xs text-on-surface-variant/80">Clean, geometric visual styling</div>
                     </div>
                   </div>
                 </div>

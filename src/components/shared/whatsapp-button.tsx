@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { getWhatsAppUrl } from "@/lib/constants";
 
 export function WhatsAppButton() {
@@ -15,7 +15,7 @@ export function WhatsAppButton() {
       }}
       aria-label="Chat with us on WhatsApp"
     >
-      <MessageCircle size={24} className="text-white" fill="white" />
+      <WhatsAppIcon size={24} className="text-white" />
     </a>
   );
 }

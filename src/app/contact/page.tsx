@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, MessageCircle, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { SITE_CONFIG, getWhatsAppUrl } from "@/lib/constants";
+import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { AnimatedSection } from "@/components/shared/animated-section";
 
 const serviceOptions = [
@@ -38,6 +39,8 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function validate(): boolean {
     const newErrors: Partial<FormData> = {};
@@ -51,12 +54,31 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!validate()) return;
-    // Resend-ready: In production, this would POST to an API route that uses Resend
-    // For now, we simulate a successful submission
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      const response = await fetch("https://formspree.io/f/xeewoqqb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await response.json();
+        setSubmitError(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setSubmitError("Failed to connect to the server. Please check your internet connection.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   function handleChange(
@@ -104,7 +126,7 @@ export default function ContactPage() {
                   className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-medium text-white transition-all hover:brightness-110"
                   style={{ background: "#25D366" }}
                 >
-                  <MessageCircle size={16} />
+                  <WhatsAppIcon size={16} />
                   Chat on WhatsApp
                 </a>
                 <button
@@ -148,7 +170,7 @@ export default function ContactPage() {
               >
                 Contact Us
               </span>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-on-surface md:text-4xl" style={{ letterSpacing: "-0.03em" }}>
+              <h1 className="mt-4 text-3xl font-bold tracking-wide text-on-surface md:text-4xl">
                 Let&apos;s build something great
               </h1>
               <p className="mt-4 max-w-lg text-base text-on-surface-variant">
@@ -326,15 +348,22 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {submitError && (
+                  <div className="rounded-lg bg-error/10 border border-error/20 p-4 text-sm text-error">
+                    {submitError}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-container px-8 py-4 text-xs font-semibold uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110"
+                  disabled={submitting}
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-container px-8 py-4 text-xs font-semibold uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
                     boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2)",
                   }}
                 >
-                  Send Message
-                  <Send size={14} />
+                  {submitting ? "Sending..." : "Send Message"}
+                  <Send size={14} className={submitting ? "animate-pulse" : ""} />
                 </button>
               </form>
             </div>
@@ -414,10 +443,9 @@ export default function ContactPage() {
                   className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
                   style={{ background: "#25D366" }}
                 >
-                  <MessageCircle
+                  <WhatsAppIcon
                     size={20}
                     className="text-white"
-                    fill="white"
                   />
                 </div>
                 <div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { getWhatsAppUrl } from "@/lib/constants";
 import { AnimatedSection } from "@/components/shared/animated-section";
 
@@ -58,7 +59,7 @@ export function CTASection({
                 className="inline-flex items-center gap-2 rounded-lg border px-8 py-4 text-xs font-semibold uppercase tracking-widest text-on-surface transition-all duration-200 hover:bg-white/5"
                 style={{ borderColor: "rgba(255,255,255,0.08)" }}
               >
-                <MessageCircle size={14} />
+                <WhatsAppIcon size={14} />
                 WhatsApp Us
               </a>
             </div>

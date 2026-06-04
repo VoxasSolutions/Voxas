@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { SITE_CONFIG } from "@/lib/constants";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sans = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const azonix = localFont({
+  src: "../../public/fonts/Azonix.otf",
+  variable: "--font-azonix",
+  display: "swap",
 });
+
 
 export const metadata: Metadata = {
   title: {
@@ -22,6 +26,11 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   keywords: [
     "Web Design Agency",
     "Website Development",
@@ -71,7 +80,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark`}
+      className={`${sans.variable} ${azonix.variable} dark`}
     >
       <head>
         <script

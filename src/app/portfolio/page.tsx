@@ -71,14 +71,19 @@ export default function PortfolioPage() {
                     </div>
                   </div>
                   <div
-                    className="relative flex items-center justify-center"
+                    className="relative flex items-center justify-center overflow-hidden"
                     style={{
                       aspectRatio: "16/7",
-                      background:
-                        "linear-gradient(135deg, rgba(17,24,39,0.9), rgba(9,9,11,0.95))",
+                      background: "#0a0a0a",
                     }}
                   >
-                    <div className="p-8 text-center md:p-16">
+                    {/* Background Screenshot */}
+                    <img
+                      src="/krishna-real-estate.png"
+                      alt="Krishna Real Estate Backdrop"
+                      className="absolute inset-0 h-full w-full object-cover object-top"
+                    />
+                    {/* <div className="relative z-10 p-8 text-center md:p-16">
                       <span
                         className="mb-4 inline-block rounded-full px-4 py-1 text-xs font-medium uppercase tracking-widest text-primary"
                         style={{
@@ -94,7 +99,7 @@ export default function PortfolioPage() {
                       <p className="mx-auto mt-4 max-w-2xl text-base text-on-surface-variant">
                         {featured.description}
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

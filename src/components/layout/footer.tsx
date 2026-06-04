@@ -31,9 +31,21 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link
               href="/"
-              className="text-xl font-bold tracking-tighter text-on-surface"
+              className="flex items-center gap-2.5 group"
             >
-              {SITE_CONFIG.name}
+              <img
+                src="/file_00000000bbec720684b54a85089de096(1).png"
+                alt="Voxas Icon"
+                className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+              {/* <span className="text-2xl font-bold tracking-widest bg-gradient-to-r from-[#e2c69f] to-[#c084fc] bg-clip-text text-transparent font-display">
+                VOXAS
+              </span> */}
+              <img
+                src="/file_0000000083307207af57182ffcddf1c6(1).png"
+                alt="Voxas Icon"
+                className="h-5 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-on-surface-variant">
               {SITE_CONFIG.description}

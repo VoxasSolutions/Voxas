@@ -44,20 +44,20 @@ export function ProblemSection() {
         {problems.map((problem) => (
           <StaggerItem key={problem.title}>
             <div
-              className="rounded-xl p-8 transition-all duration-300 hover:border-white/10"
+              className="rounded-xl p-8 transition-all duration-300 hover:border-primary/20"
               style={{
-                background: "rgba(17,24,39,0.4)",
-                border: "1px solid rgba(255,255,255,0.06)",
+                background: "rgba(19, 16, 23, 0.4)",
+                border: "1px solid rgba(226, 198, 159, 0.06)",
               }}
             >
               <div
                 className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg"
                 style={{
-                  background: "rgba(255,183,132,0.1)",
-                  border: "1px solid rgba(255,183,132,0.15)",
+                  background: "rgba(226, 198, 159, 0.08)",
+                  border: "1px solid rgba(226, 198, 159, 0.15)",
                 }}
               >
-                <problem.icon size={18} className="text-tertiary" />
+                <problem.icon size={18} className="text-primary" />
               </div>
               <h3 className="mb-3 text-lg font-semibold text-on-surface">
                 {problem.title}

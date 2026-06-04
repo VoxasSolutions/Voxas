@@ -37,10 +37,10 @@ export function ServicesPreview() {
                     style={{
                       background:
                         i % 3 === 0
-                          ? "rgba(124,58,237,0.1)"
+                          ? "rgba(226, 198, 159, 0.1)"
                           : i % 3 === 1
-                            ? "rgba(76,215,246,0.1)"
-                            : "rgba(255,183,132,0.1)",
+                            ? "rgba(192, 132, 252, 0.1)"
+                            : "rgba(255, 183, 132, 0.1)",
                     }}
                   >
                     <service.icon

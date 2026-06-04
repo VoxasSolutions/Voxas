@@ -73,17 +73,24 @@ export default function AboutPage() {
       {/* Mission Hero */}
       <SectionWrapper className="pt-16 md:pt-24">
         <AnimatedSection>
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-3xl text-center flex flex-col items-center">
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/[0.03] border border-primary/20 shadow-[0_8px_30px_rgb(0,0,0,0.5)] backdrop-blur-sm">
+              <img
+                src="/file_00000000bbec720684b54a85089de096.png"
+                alt="Voxas Icon"
+                className="h-9 w-auto object-contain"
+              />
+            </div>
             <span
               className="mb-4 inline-block rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary"
               style={{
-                borderColor: "rgba(255,255,255,0.1)",
-                background: "rgba(255,255,255,0.03)",
+                borderColor: "rgba(226, 198, 159, 0.15)",
+                background: "rgba(226, 198, 159, 0.03)",
               }}
             >
               About Voxas
             </span>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-on-surface md:text-5xl lg:text-6xl" style={{ letterSpacing: "-0.04em" }}>
+            <h1 className="mt-6 text-4xl font-bold tracking-wide text-on-surface md:text-5xl lg:text-6xl">
               Helping businesses{" "}
               <span className="gradient-text">grow online</span>
             </h1>

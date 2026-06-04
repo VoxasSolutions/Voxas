@@ -80,46 +80,12 @@ export function PortfolioPreview() {
                 className="relative w-full overflow-hidden"
                 style={{ aspectRatio: "16/9", background: "#0a0a0a" }}
               >
-                {/* Simulated Real Estate Website Preview */}
-                <div className="absolute inset-0 flex flex-col">
-                  {/* Simulated Nav */}
-                  <div className="flex items-center justify-between border-b border-white/5 px-8 py-3" style={{ background: "rgba(17,24,39,0.8)" }}>
-                    <span className="text-sm font-bold text-white">Krishna Real Estate</span>
-                    <div className="hidden gap-6 sm:flex">
-                      <span className="text-xs text-white/60">Home</span>
-                      <span className="text-xs text-white/60">Services</span>
-                      <span className="text-xs text-white/60">Properties</span>
-                      <span className="text-xs text-white/60">About Us</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="rounded bg-primary-container px-3 py-1 text-xs text-white">Book Viewing</span>
-                    </div>
-                  </div>
-                  {/* Hero Area */}
-                  <div className="flex flex-1 items-center px-8 py-6" style={{
-                    background: "linear-gradient(135deg, rgba(17,24,39,0.9) 0%, rgba(9,9,11,0.95) 100%)"
-                  }}>
-                    <div className="max-w-md">
-                      <span className="mb-2 inline-block rounded-full bg-primary-container/20 px-3 py-1 text-[10px] font-medium text-primary">
-                        Navi Mumbai&apos;s Premier Consultancy
-                      </span>
-                      <h3 className="mt-3 text-2xl font-bold leading-tight text-white md:text-3xl">
-                        Find the Right Property Solutions with Trusted Experts
-                      </h3>
-                      <p className="mt-3 text-xs leading-relaxed text-white/50">
-                        Residential • Commercial • Industrial • Agricultural • Rental
-                      </p>
-                    </div>
-                    <div className="ml-auto hidden max-w-xs lg:block">
-                      <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                        <p className="mb-3 text-sm font-medium text-white">Book a Free Consultation</p>
-                        <div className="mb-2 rounded border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/40">Enter your name</div>
-                        <div className="mb-2 rounded border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/40">Phone</div>
-                        <div className="rounded bg-primary-container px-3 py-2 text-center text-xs font-medium text-white">Request Callback</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {/* Real Real Estate Website Preview Screenshot */}
+                <img
+                  src="/krishna-real-estate.png"
+                  alt="Krishna Real Estate Preview"
+                  className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
 
                 {/* Gradient Overlay */}
                 <div
@@ -133,12 +99,12 @@ export function PortfolioPreview() {
                 {/* Bottom Info */}
                 <div className="absolute bottom-0 left-0 flex w-full items-end justify-between p-6 md:p-8">
                   <div>
-                    <h3 className="text-xl font-semibold text-white md:text-2xl">
+                    {/* <h3 className="text-xl font-semibold text-white md:text-2xl">
                       {featured.title}
                     </h3>
                     <p className="mt-1 max-w-sm text-sm text-white/70">
                       {featured.description.slice(0, 100)}...
-                    </p>
+                    </p> */}
                   </div>
                   <div
                     className="glass-panel hidden gap-6 rounded-lg p-4 md:flex"
