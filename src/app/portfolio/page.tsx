@@ -27,6 +27,7 @@ export default function PortfolioPage() {
         heading="Projects that deliver results"
         subheading="We don't just build websites — we build growth engines. Here's proof."
         centered
+        headingLevel="h1"
         className="pt-16 md:pt-24"
       >
         <div />
@@ -225,7 +226,7 @@ export default function PortfolioPage() {
                       }}
                     >
                       <span
-                        className="rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-on-surface-variant/50"
+                        className="rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-on-surface-variant"
                         style={{
                           background: "rgba(255,255,255,0.03)",
                           border: "1px solid rgba(255,255,255,0.06)",

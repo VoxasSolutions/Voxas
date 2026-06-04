@@ -95,11 +95,11 @@ export function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex items-center justify-center rounded-lg p-2 text-on-surface-variant transition-colors hover:text-on-surface md:hidden"
+          className="flex items-center justify-center rounded-lg p-3 text-on-surface-variant transition-colors hover:text-on-surface md:hidden"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -121,7 +121,7 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "rounded-lg px-4 py-3 font-display text-xs uppercase tracking-wider transition-colors",
+                    "rounded-lg px-4 py-3.5 font-display text-xs uppercase tracking-wider transition-colors",
                     pathname === link.href
                       ? "bg-white/5 text-on-surface"
                       : "text-on-surface-variant hover:bg-white/5 hover:text-on-surface"
@@ -133,7 +133,7 @@ export function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 rounded-lg bg-primary-container px-4 py-3 text-center font-display text-[10px] uppercase tracking-widest text-white transition-all hover:brightness-110"
+                className="mt-2 rounded-lg bg-primary-container px-4 py-3.5 text-center font-display text-[10px] uppercase tracking-widest text-white transition-all hover:brightness-110"
               >
                 Get Started
               </Link>

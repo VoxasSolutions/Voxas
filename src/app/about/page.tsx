@@ -77,7 +77,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-3xl text-center flex flex-col items-center">
             <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/[0.03] border border-primary/20 shadow-[0_8px_30px_rgb(0,0,0,0.5)] backdrop-blur-sm">
               <Image
-                src="/file_00000000bbec720684b54a85089de096.png"
+                src="/file_00000000bbec720684b54a85089de096(1).png"
                 alt="Voxas Icon"
                 width={36}
                 height={36}

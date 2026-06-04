@@ -55,14 +55,14 @@ export function Footer() {
             <p className="mt-4 text-sm leading-relaxed text-on-surface-variant">
               {SITE_CONFIG.description}
             </p>
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-4">
               {Object.entries(SOCIAL_LINKS).map(([name, url]) => (
                 <a
                   key={name}
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm capitalize text-on-surface-variant transition-colors hover:text-primary"
+                  className="inline-flex min-h-[44px] min-w-[44px] items-center text-sm capitalize text-on-surface-variant transition-colors hover:text-primary py-2 pr-4"
                   aria-label={`Follow us on ${name}`}
                 >
                   {name}
@@ -77,12 +77,12 @@ export function Footer() {
               <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-on-surface">
                 {section.title}
               </h3>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                      className="inline-block py-1 text-sm text-on-surface-variant transition-colors hover:text-on-surface"
                     >
                       {link.label}
                     </Link>
@@ -97,11 +97,11 @@ export function Footer() {
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-on-surface">
               Contact
             </h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-2">
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                  className="inline-block py-1 text-sm text-on-surface-variant transition-colors hover:text-on-surface"
                 >
                   {SITE_CONFIG.email}
                 </a>
@@ -109,12 +109,12 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${SITE_CONFIG.phone.replace(/\s/g, "")}`}
-                  className="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                  className="inline-block py-1 text-sm text-on-surface-variant transition-colors hover:text-on-surface"
                 >
                   {SITE_CONFIG.phone}
                 </a>
               </li>
-              <li className="text-sm text-on-surface-variant">
+              <li className="inline-block py-1 text-sm text-on-surface-variant">
                 {SITE_CONFIG.location}
               </li>
             </ul>
@@ -130,16 +130,16 @@ export function Footer() {
             © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights
             reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-8 gap-y-4">
             <Link
               href="/privacy"
-              className="transition-colors hover:text-on-surface"
+              className="inline-block py-1.5 transition-colors hover:text-on-surface"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="transition-colors hover:text-on-surface"
+              className="inline-block py-1.5 transition-colors hover:text-on-surface"
             >
               Terms of Service
             </Link>

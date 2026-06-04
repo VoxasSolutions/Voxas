@@ -38,6 +38,7 @@ export default function ServicesPage() {
         heading="Everything you need to grow online"
         subheading="From design to development, SEO to lead generation — we provide end-to-end digital solutions tailored for businesses that want results."
         centered
+        headingLevel="h1"
         className="pt-16 md:pt-24 pb-12"
       >
         <div />

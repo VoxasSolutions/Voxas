@@ -8,6 +8,7 @@ interface SectionWrapperProps {
   heading?: string;
   subheading?: string;
   centered?: boolean;
+  headingLevel?: "h1" | "h2";
 }
 
 export function SectionWrapper({
@@ -18,7 +19,10 @@ export function SectionWrapper({
   heading,
   subheading,
   centered = false,
+  headingLevel = "h2",
 }: SectionWrapperProps) {
+  const HeadingTag = headingLevel;
+
   return (
     <section
       id={id}
@@ -37,9 +41,9 @@ export function SectionWrapper({
               </span>
             )}
             {heading && (
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-on-surface md:text-4xl">
+              <HeadingTag className="mt-4 text-3xl font-semibold tracking-tight text-on-surface md:text-4xl">
                 {heading}
-              </h2>
+              </HeadingTag>
             )}
             {subheading && (
               <p

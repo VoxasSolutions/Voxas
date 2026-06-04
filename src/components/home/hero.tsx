@@ -10,18 +10,35 @@ import { Magnetic } from "@/components/shared/magnetic";
 export function Hero() {
   const [activeStep, setActiveStep] = useState(0);
   const [displayText, setDisplayText] = useState("");
+  const [isDesktop, setIsDesktop] = useState(false);
   const targetText = "Top real estate builders near me";
+
+  useEffect(() => {
+    // Only run simulators on desktop viewports
+    const media = window.matchMedia("(min-width: 1024px)");
+    setIsDesktop(media.matches);
+    const listener = (e: MediaQueryListEvent) => {
+      setIsDesktop(e.matches);
+    };
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
 
   // Cycle through steps 0, 1, 2 every 6 seconds
   useEffect(() => {
+    if (!isDesktop) return;
     const timer = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % 3);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isDesktop]);
 
   // Handle typing effect for Step 1
   useEffect(() => {
+    if (!isDesktop) {
+      setDisplayText(targetText);
+      return;
+    }
     if (activeStep === 0) {
       setDisplayText("");
       let i = 0;
@@ -37,7 +54,7 @@ export function Hero() {
     } else {
       setDisplayText(targetText);
     }
-  }, [activeStep]);
+  }, [activeStep, isDesktop]);
 
   return (
     <section className="relative flex min-h-[85vh] items-center py-20">
@@ -45,11 +62,7 @@ export function Hero() {
         <div className="flex flex-col items-center gap-16 lg:flex-row">
           {/* Left Content */}
           <div className="flex w-full flex-col gap-8 lg:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
+            <div className="animate-fade-in-up animation-delay-100">
               <span
                 className="inline-block rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary"
                 style={{
@@ -59,33 +72,18 @@ export function Hero() {
               >
                 Premium Web Design Agency
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-4xl font-bold leading-[1.1] tracking-wide text-on-surface md:text-6xl lg:text-[64px]"
-            >
+            <h1 className="text-4xl font-bold leading-[1.1] tracking-wide text-on-surface md:text-6xl lg:text-[64px] animate-fade-in-up animation-delay-200">
               We build websites that <br className="hidden md:inline" />
               <span className="gradient-text">generate customers.</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="max-w-xl text-lg leading-relaxed text-on-surface-variant"
-            >
+            <p className="max-w-xl text-lg leading-relaxed text-on-surface-variant animate-fade-in-up animation-delay-300">
               A design-driven agency focused on your growth. We craft premium websites, local search rankings, and automated lead funnels that transform traffic into actual clients.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
-            >
+            <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-400">
               <Magnetic>
                 <Link
                   href="/contact"
@@ -108,7 +106,7 @@ export function Hero() {
                   View our work
                 </Link>
               </Magnetic>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right Visual — Customer Flow Simulator */}

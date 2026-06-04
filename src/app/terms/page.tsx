@@ -17,6 +17,7 @@ export default function TermsOfServicePage() {
       heading="Terms of Service"
       subheading={`Last updated: ${lastUpdated}`}
       centered
+      headingLevel="h1"
       className="pt-16 md:pt-24"
     >
       <div className="mx-auto max-w-3xl">

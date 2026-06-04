@@ -196,7 +196,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="w-full rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/50 transition-all focus:outline-none"
+                      className="w-full rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/70 transition-all focus:outline-none"
                       style={{
                         background: "#09090b",
                         borderColor: errors.name
@@ -224,7 +224,7 @@ export default function ContactPage() {
                       value={formData.business}
                       onChange={handleChange}
                       placeholder="Your Business"
-                      className="w-full rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/50 transition-all focus:outline-none"
+                      className="w-full rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/70 transition-all focus:outline-none"
                       style={{
                         background: "#09090b",
                         borderColor: "rgba(255,255,255,0.08)",
@@ -249,7 +249,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@example.com"
-                      className="w-full rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/50 transition-all focus:outline-none"
+                      className="w-full rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/70 transition-all focus:outline-none"
                       style={{
                         background: "#09090b",
                         borderColor: errors.email
@@ -277,7 +277,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 98765 43210"
-                      className="w-full rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/50 transition-all focus:outline-none"
+                      className="w-full rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/70 transition-all focus:outline-none"
                       style={{
                         background: "#09090b",
                         borderColor: errors.phone
@@ -341,7 +341,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     rows={5}
                     placeholder="Tell us about your project, goals, and timeline..."
-                    className="w-full resize-none rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/50 transition-all focus:outline-none"
+                    className="w-full resize-none rounded-lg border px-4 py-2.5 sm:py-3 text-sm text-on-surface placeholder-on-surface-variant/70 transition-all focus:outline-none"
                     style={{
                       background: "#09090b",
                       borderColor: "rgba(255,255,255,0.08)",
