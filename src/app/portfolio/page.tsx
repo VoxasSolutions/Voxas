@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 import { projects } from "@/lib/data/portfolio";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
@@ -78,9 +79,12 @@ export default function PortfolioPage() {
                     }}
                   >
                     {/* Background Screenshot */}
-                    <img
+                    <Image
                       src="/krishna-real-estate.png"
                       alt="Krishna Real Estate Backdrop"
+                      fill
+                      priority
+                      sizes="(max-width: 1200px) 100vw, 80vw"
                       className="absolute inset-0 h-full w-full object-cover object-top"
                     />
                     {/* <div className="relative z-10 p-8 text-center md:p-16">

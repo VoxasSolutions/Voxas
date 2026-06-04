@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -26,14 +27,20 @@ export function Navbar() {
           href="/"
           className="flex items-center gap-2.5 group"
         >
-          <img
+          <Image
             src="/file_00000000bbec720684b54a85089de096(1).png"
             alt="Voxas Icon"
+            width={32}
+            height={32}
+            priority
             className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          <img
+          <Image
             src="/file_0000000083307207af57182ffcddf1c6(1).png"
-            alt="Voxas Icon"
+            alt="Voxas Text Logo"
+            width={80}
+            height={20}
+            priority
             className="h-5 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
           {/* <span className="text-xl font-bold tracking-widest bg-gradient-to-r from-[#e2c69f] to-[#c084fc] bg-clip-text text-transparent font-display">

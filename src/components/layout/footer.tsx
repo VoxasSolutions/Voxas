@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SITE_CONFIG, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 
 const footerSections = [
@@ -33,17 +34,21 @@ export function Footer() {
               href="/"
               className="flex items-center gap-2.5 group"
             >
-              <img
+              <Image
                 src="/file_00000000bbec720684b54a85089de096(1).png"
                 alt="Voxas Icon"
+                width={32}
+                height={32}
                 className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
               {/* <span className="text-2xl font-bold tracking-widest bg-gradient-to-r from-[#e2c69f] to-[#c084fc] bg-clip-text text-transparent font-display">
                 VOXAS
               </span> */}
-              <img
+              <Image
                 src="/file_0000000083307207af57182ffcddf1c6(1).png"
-                alt="Voxas Icon"
+                alt="Voxas Text Logo"
+                width={80}
+                height={20}
                 className="h-5 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>

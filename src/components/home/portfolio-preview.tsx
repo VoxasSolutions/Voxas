@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/lib/data/portfolio";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { AnimatedSection } from "@/components/shared/animated-section";
@@ -81,9 +82,11 @@ export function PortfolioPreview() {
                 style={{ aspectRatio: "16/9", background: "#0a0a0a" }}
               >
                 {/* Real Real Estate Website Preview Screenshot */}
-                <img
+                <Image
                   src="/krishna-real-estate.png"
                   alt="Krishna Real Estate Preview"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
 
