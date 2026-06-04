@@ -8,9 +8,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { Magnetic } from "@/components/shared/magnetic";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const pathname = usePathname();
 
   return (
@@ -49,34 +51,45 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
+              onMouseEnter={() => setHoveredLink(link.href)}
+              onMouseLeave={() => setHoveredLink(null)}
               className={cn(
-                "font-display text-[11px] uppercase tracking-wider transition-colors duration-200",
+                "relative rounded-lg px-4 py-2 font-display text-[11px] uppercase tracking-wider transition-colors duration-200",
                 pathname === link.href
                   ? "text-on-surface"
                   : "text-on-surface-variant hover:text-on-surface"
               )}
             >
-              {link.label}
+              {hoveredLink === link.href && (
+                <motion.span
+                  layoutId="navbar-hover"
+                  className="absolute inset-0 z-0 rounded-lg bg-white/5"
+                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10">{link.label}</span>
             </Link>
           ))}
         </div>
 
         {/* Desktop CTA */}
         <div className="hidden items-center gap-4 md:flex">
-          <Link
-            href="/contact"
-            className="inline-flex items-center rounded-lg bg-primary-container px-5 py-2.5 font-display text-[10px] uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110"
-            style={{
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2)",
-            }}
-          >
-            Get Started
-          </Link>
+          <Magnetic>
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-lg bg-primary-container px-5 py-2.5 font-display text-[10px] uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110"
+              style={{
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2)",
+              }}
+            >
+              Get Started
+            </Link>
+          </Magnetic>
         </div>
 
         {/* Mobile Menu Button */}

@@ -6,6 +6,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/shared/animated-section";
+import { SpotlightCard } from "@/components/shared/spotlight-card";
 
 export function ServicesPreview() {
   // Show first 4 services in bento layout on homepage
@@ -22,6 +23,13 @@ export function ServicesPreview() {
       <StaggerContainer className="grid auto-rows-[250px] grid-cols-1 gap-6 md:grid-cols-3">
         {featured.map((service, i) => {
           const isWide = i === 0 || i === 3;
+          const glowColor =
+            i % 3 === 0
+              ? "rgba(226, 198, 159, 0.15)"
+              : i % 3 === 1
+                ? "rgba(192, 132, 252, 0.15)"
+                : "rgba(255, 183, 132, 0.15)";
+
           return (
             <StaggerItem
               key={service.id}
@@ -29,46 +37,51 @@ export function ServicesPreview() {
             >
               <Link
                 href={`/services#${service.id}`}
-                className="bento-card group flex h-full flex-col justify-between rounded-xl p-8"
+                className="block h-full"
               >
-                <div className="flex items-start justify-between">
-                  <div
-                    className="flex h-12 w-12 items-center justify-center rounded-lg transition-opacity group-hover:opacity-100"
-                    style={{
-                      background:
-                        i % 3 === 0
-                          ? "rgba(226, 198, 159, 0.1)"
-                          : i % 3 === 1
-                            ? "rgba(192, 132, 252, 0.1)"
-                            : "rgba(255, 183, 132, 0.1)",
-                    }}
-                  >
-                    <service.icon
-                      size={22}
-                      className={
-                        i % 3 === 0
-                          ? "text-primary"
-                          : i % 3 === 1
-                            ? "text-secondary"
-                            : "text-tertiary"
-                      }
+                <SpotlightCard
+                  glowColor={glowColor}
+                  className="h-full flex flex-col justify-between p-8 cursor-pointer"
+                >
+                  <div className="flex items-start justify-between">
+                    <div
+                      className="flex h-12 w-12 items-center justify-center rounded-lg transition-opacity group-hover:opacity-100"
+                      style={{
+                        background:
+                          i % 3 === 0
+                            ? "rgba(226, 198, 159, 0.1)"
+                            : i % 3 === 1
+                              ? "rgba(192, 132, 252, 0.1)"
+                              : "rgba(255, 183, 132, 0.1)",
+                      }}
+                    >
+                      <service.icon
+                        size={22}
+                        className={
+                          i % 3 === 0
+                            ? "text-primary"
+                            : i % 3 === 1
+                              ? "text-secondary"
+                              : "text-tertiary"
+                        }
+                      />
+                    </div>
+                    <ArrowUpRight
+                      size={18}
+                      className="text-on-surface-variant transition-colors group-hover:text-on-surface"
                     />
                   </div>
-                  <ArrowUpRight
-                    size={18}
-                    className="text-on-surface-variant transition-colors group-hover:text-on-surface"
-                  />
-                </div>
-                <div>
-                  <h3 className="mb-2 text-xl font-semibold text-on-surface">
-                    {service.title}
-                  </h3>
-                  <p
-                    className={`text-sm leading-relaxed text-on-surface-variant ${isWide ? "max-w-md" : ""}`}
-                  >
-                    {service.description}
-                  </p>
-                </div>
+                  <div>
+                    <h3 className="mb-2 text-xl font-semibold text-on-surface">
+                      {service.title}
+                    </h3>
+                    <p
+                      className={`text-sm leading-relaxed text-on-surface-variant ${isWide ? "max-w-md" : ""}`}
+                    >
+                      {service.description}
+                    </p>
+                  </div>
+                </SpotlightCard>
               </Link>
             </StaggerItem>
           );

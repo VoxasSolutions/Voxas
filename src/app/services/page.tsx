@@ -8,6 +8,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/shared/animated-section";
+import { SpotlightCard } from "@/components/shared/spotlight-card";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -58,7 +59,7 @@ export default function ServicesPage() {
           <StaggerContainer className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {/* Website Design - Bento Card 1 */}
             <StaggerItem className="lg:col-span-1">
-              <div className="bento-card flex h-full flex-col justify-between p-8">
+              <SpotlightCard className="h-full flex flex-col justify-between p-8" glowColor="rgba(226, 198, 159, 0.15)">
                 <div>
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
                     <design.icon size={22} className="text-primary" />
@@ -76,12 +77,12 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </SpotlightCard>
             </StaggerItem>
 
             {/* Website Development - Bento Card 2 (Wide) */}
             <StaggerItem className="lg:col-span-2">
-              <div className="bento-card flex h-full flex-col justify-between p-8">
+              <SpotlightCard className="h-full flex flex-col justify-between p-8" glowColor="rgba(192, 132, 252, 0.15)">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
                   <div className="md:col-span-3">
                     <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/10 border border-secondary/20">
@@ -117,12 +118,12 @@ export default function ServicesPage() {
                     <span className="text-secondary font-semibold">Under 1.5s Load Time</span>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             </StaggerItem>
 
             {/* Landing Pages - Bento Card 3 (Full Width Horizontal) */}
             <StaggerItem className="lg:col-span-3">
-              <div className="bento-card p-8">
+              <SpotlightCard className="p-8" glowColor="rgba(255, 183, 132, 0.15)">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                   <div>
                     <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-tertiary/10 border border-tertiary/20">
@@ -151,7 +152,7 @@ export default function ServicesPage() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             </StaggerItem>
           </StaggerContainer>
         </div>
@@ -322,7 +323,7 @@ export default function ServicesPage() {
           <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {/* WhatsApp Integration - Hover Card */}
             <StaggerItem>
-              <div className="bento-card group flex h-full flex-col justify-between p-8 transition-all hover:border-green-500/20">
+              <SpotlightCard className="h-full flex flex-col justify-between p-8 transition-all hover:border-green-500/20" glowColor="rgba(37, 211, 102, 0.15)">
                 <div>
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-green-500/10 border border-green-500/20 group-hover:bg-green-500/20 transition-all">
                     <whatsapp.icon size={22} className="text-green-400" />
@@ -342,12 +343,12 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </SpotlightCard>
             </StaggerItem>
 
             {/* AI Chatbots - Hover Card */}
             <StaggerItem>
-              <div className="bento-card group flex h-full flex-col justify-between p-8 transition-all hover:border-cyan-500/20">
+              <SpotlightCard className="h-full flex flex-col justify-between p-8 transition-all hover:border-cyan-500/20" glowColor="rgba(34, 211, 238, 0.15)">
                 <div>
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/20 group-hover:bg-cyan-500/20 transition-all">
                     <chatbot.icon size={22} className="text-cyan-400" />
@@ -367,12 +368,12 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </SpotlightCard>
             </StaggerItem>
 
             {/* Maintenance & Support - Hover Card */}
             <StaggerItem>
-              <div className="bento-card group flex h-full flex-col justify-between p-8 transition-all hover:border-purple-500/20">
+              <SpotlightCard className="h-full flex flex-col justify-between p-8 transition-all hover:border-purple-500/20" glowColor="rgba(192, 132, 252, 0.15)">
                 <div>
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/10 border border-purple-500/20 group-hover:bg-purple-500/20 transition-all">
                     <maintenance.icon size={22} className="text-purple-400" />
@@ -392,7 +393,7 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </SpotlightCard>
             </StaggerItem>
           </StaggerContainer>
         </div>

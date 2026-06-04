@@ -5,6 +5,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/shared/animated-section";
+import { SpotlightCard } from "@/components/shared/spotlight-card";
 
 export function Testimonials() {
   return (
@@ -17,12 +18,9 @@ export function Testimonials() {
       <StaggerContainer className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {testimonials.map((testimonial) => (
           <StaggerItem key={testimonial.id}>
-            <div
-              className="flex h-full flex-col rounded-xl p-8 transition-all duration-300 hover:border-white/10"
-              style={{
-                background: "rgba(17,24,39,0.4)",
-                border: "1px solid rgba(255,255,255,0.06)",
-              }}
+            <SpotlightCard
+              className="h-full flex flex-col p-8"
+              glowColor="rgba(192, 132, 252, 0.15)"
             >
               {/* Rating */}
               <div className="mb-4 flex gap-1">
@@ -66,7 +64,7 @@ export function Testimonials() {
                   {testimonial.category}
                 </span>
               </div>
-            </div>
+            </SpotlightCard>
           </StaggerItem>
         ))}
       </StaggerContainer>

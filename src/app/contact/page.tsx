@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { SITE_CONFIG, getWhatsAppUrl } from "@/lib/constants";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 import { AnimatedSection } from "@/components/shared/animated-section";
+import { Magnetic } from "@/components/shared/magnetic";
 
 const serviceOptions = [
   "Website Design",
@@ -354,17 +355,19 @@ export default function ContactPage() {
                   </div>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-container px-8 py-4 text-xs font-semibold uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{
-                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2)",
-                  }}
-                >
-                  {submitting ? "Sending..." : "Send Message"}
-                  <Send size={14} className={submitting ? "animate-pulse" : ""} />
-                </button>
+                <Magnetic>
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-container px-8 py-4 text-xs font-semibold uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{
+                      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2)",
+                    }}
+                  >
+                    {submitting ? "Sending..." : "Send Message"}
+                    <Send size={14} className={submitting ? "animate-pulse" : ""} />
+                  </button>
+                </Magnetic>
               </form>
             </div>
           </AnimatedSection>
