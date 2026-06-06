@@ -40,7 +40,34 @@ export const projects: PortfolioProject[] = [
       { label: "Page Load", value: "<2s" },
       { label: "Mobile Score", value: "98" },
     ],
-    url: "https://krishnarealestate.com",
+    url: "https://krishna-real-estate.vercel.app",
+    featured: true,
+  },
+  {
+    id: "lisette-clinic",
+    title: "Lisette Clinic",
+    category: "Lead Generation Website",
+    description:
+      "A complete digital presence for a trusted dermatology and skin care clinic in Airoli, Navi Mumbai, focusing on appointment bookings, treatment discovery, and seamless lead capture through WhatsApp integration.",
+    challenge:
+      "Lisette Clinic had no professional online presence despite 13+ years of trusted care by Dr. Raj. They relied entirely on word-of-mouth and Justdial listings for patient acquisition, resulting in limited reach and lost opportunities to competitors with stronger digital visibility.",
+    solution:
+      "We designed and developed a modern, conversion-focused clinic website with a full treatments catalogue, patient testimonials, an integrated contact system, WhatsApp click-to-book, and comprehensive local SEO targeting skin and hair care searches in Navi Mumbai.",
+    results: [
+      "Professional online presence established for a 13-year-old clinic",
+      "Appointment booking system with WhatsApp & direct call integration",
+      "Mobile-optimized for patients browsing treatments on the go",
+      "SEO-optimized for local dermatology and skin care keywords",
+      "Google Maps & Justdial profile reinforcement via structured data",
+    ],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "SEO"],
+    metrics: [
+      { label: "Patient Rating", value: "4.7★" },
+      { label: "Years of Trust", value: "13+" },
+      { label: "Verified Reviews", value: "71+" },
+      { label: "Mobile Score", value: "98" },
+    ],
+    url: "https://lisette-clinic.vercel.app",
     featured: true,
   },
 ];
